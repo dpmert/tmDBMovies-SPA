@@ -2,8 +2,14 @@
 
   <mat-form-field class="mySearch">
     <input type="text" matInput [formControl]="searchControl" class="text-primary" autocomplete="off" />
-    <mat-placeholder>Film Ara</mat-placeholder>
+    <mat-placeholder class="myplaceholder">Film Ara</mat-placeholder>
   </mat-form-field>
+
+  <span *ngIf="movieList.length != 0" class="listName"> {{ listName }} </span>
+  <span *ngIf="movieList.length != 0" class="createdName"> {{ listCreatedName }} </span>
+
+  <span *ngIf="movieList.length == 0" class="m-auto" style="font-size: 35px;"> TMDB Movies Test Uygulaması </span>
+
 
   <button mat-raised-button class="myBtn" (click)="getMovies()">Listeyi Getir</button>
 

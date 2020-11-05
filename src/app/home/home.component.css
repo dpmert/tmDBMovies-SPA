@@ -1,13 +1,30 @@
 .mySearch {
   margin: auto auto auto 2%;
-  width: 40%;
+  width: 20%;
+}
+
+.mat-focused .placeholder {
+  color: black !important;
+}
+
+.myplaceholder {
+  color: black;
 }
 
 .myBtn {
   margin: auto 2% auto auto;
 }
 
-/* CARD TEMPLATE URL : https://codepen.io/georgemiro/pen/oxrrwp */
+.listName{
+  margin: auto 1% auto auto;
+  font-size: 40px;
+}
+
+.createdName{
+  margin: auto  auto 0 1%;
+}
+
+/* Film kartlarının tasarım  Url : https://codepen.io/georgemiro/pen/oxrrwp */
 
 .cellphone-container {
   width: 375px;

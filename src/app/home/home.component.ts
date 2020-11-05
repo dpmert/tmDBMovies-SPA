@@ -25,7 +25,6 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit() {
-    this.getMovies()
   }
 
   getMovies(){
@@ -36,7 +35,7 @@ export class HomeComponent implements OnInit {
       console.log(res.results.map(x => x.media_type)) //Tüm değerler aynı olduğu için listeme dağil etmedim
 
       this.listName = res.name
-      this.listCreatedName = res.created_by.name
+      this.listCreatedName = "By " + res.created_by.name
 
       res.results.forEach(element => {
         this.movieList.push({
