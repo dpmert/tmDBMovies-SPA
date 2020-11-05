@@ -1,0 +1,48 @@
+<div class="row m-0">
+
+  <mat-form-field class="mySearch">
+    <input type="text" matInput [formControl]="searchControl" class="text-primary" autocomplete="off" />
+    <mat-placeholder>Film Ara</mat-placeholder>
+  </mat-form-field>
+
+  <button mat-raised-button class="myBtn" (click)="getMovies()">Listeyi Getir</button>
+
+</div>
+
+<div class="row m-0">
+
+  <ng-container *ngFor="let movie of (filteredMovieList | async ); let itemIndex = index">
+
+    <div class="col-12 col-md-6 col-lg-6 col-xl-4">
+      <div class="cellphone-container">
+        <div class="movie">
+          <div class="movie-img" [ngStyle]="{ 'background-image':  movie.posterPath }" ></div>
+          <div class="text-movie-cont">
+            <div class="mr-grid">
+              <div class="col1">
+                <h4>{{ movie.title }}</h4>
+              </div>
+            </div> 
+            <div class="mr-grid summary-row">
+              <div class="col2">
+                <h5>{{ movie.realeseDate |  date: "dd.MM.yyyy" }}</h5>
+              </div>
+              <div class="col2">
+                <ul class="movie-likes">
+                  <li><i class="material-icons">&#xE813;</i>{{movie.voteAverege}}</li>
+                </ul>
+              </div>
+            </div>
+            <div class="mr-grid">
+              <div class="col1">
+                <p class="movie-description"> {{ movie.overview }}  </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </ng-container>
+
+</div>
